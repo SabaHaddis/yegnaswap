@@ -841,8 +841,6 @@ img {
 body.no-scroll {
     overflow: hidden;
 }
-
-/* Tablet and larger mobile devices */
 @media (max-width: 992px) {
     .container {
         padding: 0 30px;
