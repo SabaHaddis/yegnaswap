@@ -144,4 +144,42 @@ img {
 .btn-secondary:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+.about-section {
+    padding: 100px 0 0 10px;
+    margin-bottom: 0px;
+}
 
+.about-top-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; 
+    gap: 70px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+.about-heading {
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    color: var(--dark-text);
+    line-height: 1.35;
+    font-weight: 600;
+    margin: 0;
+}
+
+.about-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--dark-text);
+    line-height: 1.8;
+    padding-top: 4px; 
+    margin: 0;
+}
+
+.about-image-wrapper img {
+    width: 70%;
+    height: 480px;
+    border-radius: 8px;
+    object-fit: cover;
+    justify-self: center;
+    margin-bottom: 0px;
+}
