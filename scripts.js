@@ -73,8 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let contextReady = false;
   let chatHistory = [];
 
-  // Show loading message while context loads
-  addMessage("⏳ Loading YegnaBot...", 'received');
 
   // Load context.txt
   fetch('context.txt')
@@ -85,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       chatHistory = [{ role: 'system', content: systemPrompt }];
 
       // Replace loading with welcome message
-      addMessage("👋 Hi, I’m YegnaBot! Ask me anything about our platform — try 'What can I sell here?' or 'How do I list a service?'", 'received');
+      addMessage("👋 Hi, I’m YegnaBot! Ask me anything about our platform", 'received');
     })
     .catch(() => {
       addMessage("⚠️ Failed to load assistant context. Please refresh.", 'received');
@@ -117,9 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
     chatInput.value = '';
 
     try {
+        typingIndicator.style.display = 'block';
       const response = await puter.ai.chat(chatHistory, {
         model: 'gpt-4o'
       });
+      typingIndicator.style.display = 'none';
 
       let reply = response?.message?.content || response?.content || 'Sorry, I could not respond right now.';
       chatHistory.push({ role: 'assistant', content: reply });
