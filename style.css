@@ -16,6 +16,7 @@
     --chat-sent-bg: #FFEBF0;
     --chat-send-button: #007BFF;
     --chat-highlight-border: #A18DFF;
+    --form-field-bg: #F0EFEA;
 
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -648,4 +649,101 @@ img {
 
 .team-member-socials a:hover {
     color: var(--primary-green);
+}
+.contact-section {
+    padding: 120px 0;
+    background-color: var(--off-white-bg);
+}
+
+.contact-wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-text);
+}
+
+.contact-heading {
+    font-size: 2.75rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin: 0 0 0.75rem 0;
+}
+
+.contact-subheading {
+    font-size: 1rem;
+    color: var(--gray-text);
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark-text);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--form-field-bg);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--dark-text);
+    transition: box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-green);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group textarea::placeholder {
+    color: #9b9a94;
+}
+
+.form-submit-group {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.btn-submit {
+    background: linear-gradient(180deg, #2B7A78 0%, #184F4C 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    padding: 14px 56px;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
 }
