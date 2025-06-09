@@ -67,14 +67,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatForm = document.querySelector('#chatForm');
   const chatDisplay = document.querySelector('#chatDisplay');
 
-  const systemPrompt = `
-    You are YegnaBot, a helpful and friendly assistant for YegnaSwap — a local-first marketplace founded in Addis Ababa. 
-    YegnaSwap helps users resell second-hand items, promote handmade products, and offer services like tutoring, braiding, or design. 
-    The platform is student-led and community-powered. Your job is to answer questions about the platform in a short, supportive tone.
-  `;
+  let systemPrompt = "";
+  let contextReady = false;
+  let chatHistory = [];
 
-  let chatHistory = [{ role: 'system', content: systemPrompt }];
+  // Show loading message while context loads
+  addMessage("⏳ Loading YegnaBot...", 'received');
 
+  // Load context.txt
+  fetch('context.txt')
+    .then(res => res.text())
+    .then(context => {
+      systemPrompt = context;
+      contextReady = true;
+      chatHistory = [{ role: 'system', content: systemPrompt }];
+
+      // Replace loading with welcome message
+      addMessage("👋 Hi, I’m YegnaBot! Ask me anything about our platform — try 'What can I sell here?' or 'How do I list a service?'", 'received');
+    })
+    .catch(() => {
+      addMessage("⚠️ Failed to load assistant context. Please refresh.", 'received');
+    });
+
+  // Add chat message to UI
   function addMessage(text, type) {
     const msg = document.createElement('div');
     msg.classList.add('message', type);
@@ -83,8 +98,15 @@ document.addEventListener('DOMContentLoaded', () => {
     chatDisplay.scrollTop = chatDisplay.scrollHeight;
   }
 
+  // Chat form submit
   chatForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    if (!contextReady) {
+      addMessage("⚠️ Still loading... please wait.", 'received');
+      return;
+    }
+
     const userText = chatInput.value.trim();
     if (!userText) return;
 
@@ -94,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const response = await puter.ai.chat(chatHistory, {
-        model: 'gpt-4o' // use gpt-4o explicitly
+        model: 'gpt-4o'
       });
 
       let reply = response?.message?.content || response?.content || 'Sorry, I could not respond right now.';
@@ -103,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     } catch (err) {
       console.error('AI Error:', err);
-      addMessage("Oops! I couldn't get a response. Please try again.", 'received');
+      addMessage("❌ Oops! I couldn't get a response. Please try again.", 'received');
     }
   });
 });
