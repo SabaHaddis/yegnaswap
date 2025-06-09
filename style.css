@@ -855,5 +855,64 @@ body.no-scroll {
     section {
         padding: 80px 0;
     }
+     .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger .line1, .hamburger .line2, .hamburger .line3 {
+        width: 25px;
+        height: 3px;
+        background-color: var(--dark-text);
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+    .hamburger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger.toggle .line2 {
+        opacity: 0;
+    }
+    .hamburger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        top: 89px; /* Height of header */
+        background-color: var(--off-white-bg);
+        height: calc(100vh - 89px);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 100;
+    }
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    /* Stacking Grids */
+    .about-top-content,
+    .features-header,
+    .testimonials-grid,
+    .swapchat-grid,
+    .team-grid,
+    .values-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-top-content {
+        text-align: center;
+    }
+
+    .swapchat-grid {
+        gap: 60px;
+    }
 
 }
