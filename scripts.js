@@ -31,4 +31,21 @@ count++;
 localStorage.setItem('visitCount', count);
 document.getElementById('visitorCount').innerText = `You've visited this site ${count} times.`;
 
+ const faqItems = document.querySelectorAll('.faq-item');
 
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        question.addEventListener('click', () => {
+
+            const wasActive = item.classList.contains('active');
+
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+            
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+        });
+    });
