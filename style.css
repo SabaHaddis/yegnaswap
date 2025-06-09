@@ -503,6 +503,28 @@ img {
     background-color: #F8F9FA;
     height: 450px;
 }
+/*Typing indicator*/
+.typing-message {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 10px;
+  padding-left: 12px;
+  display: none;
+  font-style: italic;
+}
+
+.typing-message .dots::after {
+  content: '';
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { content: '.'; }
+  33% { content: '..'; }
+  66% { content: '...'; }
+}
 
 .message {
     padding: 12px 18px;

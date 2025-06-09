@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatInput = document.querySelector('#chatInput');
   const chatForm = document.querySelector('#chatForm');
   const chatDisplay = document.querySelector('#chatDisplay');
+  const typingIndicator = document.getElementById('typingIndicator');
+
 
   let systemPrompt = "";
   let contextReady = false;
