@@ -9,6 +9,8 @@
     --dark-text: #113634;
     --off-white-bg: #FEF9EF;
     --white: #FFFFFF;
+    --gray-text: #5f6c7b;
+    --light-gray-bg: #E9ECEF;
 
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -182,4 +184,108 @@ img {
     object-fit: cover;
     justify-self: center;
     margin-bottom: 0px;
+}
+
+.features-section {
+    background-color: #F0FAF9;
+    padding: 120px 0 40px;
+}
+
+.features-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 70px;
+    align-items: start;
+    margin-bottom: 80px;
+}
+
+.features-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-text);
+}
+
+.features-heading {
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    color: var(--dark-text);
+    line-height: 1.35;
+    font-weight: 600;
+    margin: 0;
+}
+
+.features-description {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--dark-text);
+    line-height: 1.8;
+    padding-top: 4px;
+    margin: 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.feature-icon {
+    margin-bottom: 1.5rem;
+}
+
+.feature-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    line-height: 1.4;
+    color: var(--dark-text);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.feature-text {
+    font-size: 1rem;
+    color: var(--gray-text);
+    line-height: 1.6;
+}
+
+.features-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.btn-light-gray {
+    background-color: var(--light-gray-bg);
+    color: var(--dark-text);
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-light-gray:hover {
+    background-color: #d8dde0;
+}
+
+.btn-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--dark-text);
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: var(--primary-green);
+}
+
+.arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.btn-link:hover .arrow-icon {
+    transform: translateX(3px);
 }
