@@ -49,3 +49,14 @@ document.getElementById('visitorCount').innerText = `You've visited this site ${
             }
         });
     });
+
+    const backToTopBtn = document.getElementById('backToTop');
+
+window.onscroll = () => {
+  backToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+};
+
+backToTopBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+

@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -916,6 +920,7 @@ img {
     color: var(--white);
 }
 
+
 body.no-scroll {
     overflow: hidden;
 }
@@ -1038,4 +1043,22 @@ body.no-scroll {
     .footer-bottom {
         font-size: 0.8rem;
     }
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #3AAFA9;
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  font-size: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+#backToTop:hover {
+  background-color: #2B7A78;
 }
