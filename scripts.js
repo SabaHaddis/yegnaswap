@@ -60,3 +60,51 @@ backToTopBtn.onclick = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
+//Puter.js implementation
+
+document.addEventListener('DOMContentLoaded', () => {
+  const chatInput = document.querySelector('#chatInput');
+  const chatForm = document.querySelector('#chatForm');
+  const chatDisplay = document.querySelector('#chatDisplay');
+
+  const systemPrompt = `
+    You are YegnaBot, a helpful and friendly assistant for YegnaSwap — a local-first marketplace founded in Addis Ababa. 
+    YegnaSwap helps users resell second-hand items, promote handmade products, and offer services like tutoring, braiding, or design. 
+    The platform is student-led and community-powered. Your job is to answer questions about the platform in a short, supportive tone.
+  `;
+
+  let chatHistory = [{ role: 'system', content: systemPrompt }];
+
+  function addMessage(text, type) {
+    const msg = document.createElement('div');
+    msg.classList.add('message', type);
+    msg.textContent = text;
+    chatDisplay.appendChild(msg);
+    chatDisplay.scrollTop = chatDisplay.scrollHeight;
+  }
+
+  chatForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const userText = chatInput.value.trim();
+    if (!userText) return;
+
+    addMessage(userText, 'sent');
+    chatHistory.push({ role: 'user', content: userText });
+    chatInput.value = '';
+
+    try {
+      const response = await puter.ai.chat(chatHistory, {
+        model: 'gpt-4o' // use gpt-4o explicitly
+      });
+
+      let reply = response?.message?.content || response?.content || 'Sorry, I could not respond right now.';
+      chatHistory.push({ role: 'assistant', content: reply });
+      addMessage(reply, 'received');
+
+    } catch (err) {
+      console.error('AI Error:', err);
+      addMessage("Oops! I couldn't get a response. Please try again.", 'received');
+    }
+  });
+});
+

@@ -261,23 +261,18 @@
                             </div>
                             <p>Your AI-powered helper for perfect listings.</p>
                         </div>
-                        <div class="chat-body">
-                            <div class="message received">Hello! How can I assist you with your YegnaSwap listing today?
-                            </div>
-                            <div class="message sent">I want to sell my old laptop, what details should I include?</div>
-                            <div class="message received">Great! For laptops, include brand, model, condition (e.g.,
-                                "like new," "good"), specs (RAM, storage), and any defects. Photos are crucial!</div>
-                            <div class="message sent">Should I mention accessories like the charger?</div>
-                            <div class="message received">Absolutely! Always list all included accessories to attract
-                                more buyers. Transparency builds trust. Anything else I can help with?</div>
+                        <div class="chat-body" id="chatDisplay">
+                            <!-- Messages will be injected here by JavaScript -->
                         </div>
+
                         <div class="chat-footer">
-                            <form class="chat-form">
-                                <input type="text" placeholder="Type your message...">
-                                <button type="submit" class="btn-send">
-                                    <i class="fa-solid fa-paper-plane"></i> Send
-                                </button>
-                            </form>
+                            <form class="chat-form" id="chatForm">
+  <input type="text" id="chatInput" placeholder="Type your message..." />
+  <button type="submit" class="btn-send" id="sendBtn">
+    <i class="fa-solid fa-paper-plane"></i> Send
+  </button>
+</form>
+
                         </div>
                     </div>
                 </div>
@@ -453,6 +448,7 @@
         </div>
     </footer>
 
+    <script src="https://js.puter.com/v2/"></script>
     <script src="scripts.js"></script>
 </body>
 
