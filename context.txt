@@ -1,0 +1,27 @@
+YegnaSwap is a local-first digital marketplace started by students in Addis Ababa. It is designed to help users sell second-hand items, promote homemade or DIY products, and offer local services like tutoring, hair braiding, printing, and more.
+
+The startup was inspired by the everyday hustle on university campuses and in neighborhoods — where students and young people are already trading, selling, and promoting what they have or do. However, these exchanges were scattered across Telegram groups, word of mouth, and random links.
+
+YegnaSwap solves this by offering a single, trusted space where anyone can post what they want to resell, swap, or offer — whether it’s a pair of shoes, a baked cake, or a tutoring service.
+
+Core products:
+1. Resell & Share – Post new or second-hand items for sale, swap, or giveaway.
+2. Promote What You Make – Showcase handmade items like crafts, art, baked goods, or print designs.
+3. Offer Your Services – Freelancers can list tutoring, hairdressing, sewing, editing, digital design, and more.
+
+YegnaSwap was created to make local commerce easier, faster, and more trustworthy — especially for students, small creators, and side hustlers.
+
+Mission: To connect people through what they have, make, or do.
+Vision: To build a student-born, public-facing marketplace that grows into a trusted local ecosystem across Ethiopia and beyond.
+
+Team roles:
+- Founder & Project lead: Saba Haddis
+- UX Designer: Linet Mwende
+- AI developer: Rezan Mohammed
+
+Sample questions YegnaBot should answer:
+- Who founded YegnaSwap?
+- What can I post or sell on YegnaSwap?
+- How is it different from other marketplaces?
+- What kinds of services can I promote?
+- What’s the long-term goal of the startup?
