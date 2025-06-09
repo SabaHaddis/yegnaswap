@@ -289,3 +289,74 @@ img {
 .btn-link:hover .arrow-icon {
     transform: translateX(3px);
 }
+.testimonials-section {
+    background-color: #bcdcda;
+    padding: 80px 0 60px 20px;
+}
+
+.testimonials-header {
+    margin-bottom: 60px;
+}
+
+.testimonials-heading {
+    font-size: 2.75rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin: 0 0 0.5rem 0;
+}
+
+.testimonials-subheading {
+    font-size: 1rem;
+    color: var(--gray-text);
+    margin: 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+.testimonial-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 1.5rem;
+    color: #FFC107; /* Star color */
+    font-size: 1.25rem; /* Star size */
+}
+
+.testimonial-quote {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--dark-text);
+    margin-bottom: 2rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.author-title {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+}
