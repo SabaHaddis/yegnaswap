@@ -4,6 +4,8 @@ YegnaSwap is a local-first digital marketplace built by students in Addis Ababa.
 
  **Live Site:** https://sabahaddis.github.io/yegnaswap
  
+                If the site doesn't load(stuck on loading screen or timeout), try using **VPN**.
+ 
  **Github repo:** https://github.com/SabaHaddis/yegnaswap
  
  **Figma Design** https://www.figma.com/design/puv00DIAkZKnn7nSo8eU0B/YegnaSwap?node-id=0-1&t=EgXtdHnjKx3rtkMA-1
